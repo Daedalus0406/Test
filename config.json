@@ -1,0 +1,28 @@
+{
+  "station_id": "A-01",
+  "data_source": {
+    "kind": "mock"
+  },
+  "recording": {
+    "polling_interval_seconds": 1.0,
+    "flush_interval_seconds": 5.0,
+    "max_recording_hours": 24.0
+  },
+  "storage": {
+    "base_path": "data"
+  },
+  "sheets": [
+    {
+      "name": "Temperature",
+      "tags": ["Temp_1", "Temp_2"]
+    },
+    {
+      "name": "Pressure",
+      "tags": ["Pressure_1"]
+    },
+    {
+      "name": "Flow rate",
+      "tags": ["Flow_1"]
+    }
+  ]
+}
