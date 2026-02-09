@@ -144,6 +144,19 @@
    - `GET /history` 取得歷史檔案清單
    - `GET /config` 檢視目前 config
 
+**測試與驗證建議（我可以協助你執行或提供腳本）**
+
+- **API 冒煙測試（curl）**：確認服務可啟動、可開始/停止錄製。
+  ```bash
+  curl -X POST http://127.0.0.1:8000/start
+  curl http://127.0.0.1:8000/status
+  curl -X POST http://127.0.0.1:8000/stop
+  ```
+- **錄檔驗證**：檢查 `data/YYYY-MM-DD/` 是否產生檔案，並確認檔名格式為 `HHMMSS_HHMMSS.xlsx`。
+- **資料寫入驗證**：開啟 Excel 檔案，確認三個 sheet（`Temperature`/`Pressure`/`Flow rate`）都有資料列且欄位正確。
+- **24 小時上限測試（縮短時間）**：將 `config.json` 的 `max_recording_hours` 調小（例如 `0.001`），觀察是否自動停止並改名。
+- **效能與穩定性**：提高 tags 數量，觀察 CPU/IO 是否可接受，必要時調整 `flush_interval_seconds`。
+
 ### 方案 B：Node.js（Express）+ 前端 + 檔案
 
 **適合條件**
