@@ -1,0 +1,96 @@
+{
+    "station_name": "Workstation A - 2 Pumps",
+    "plc": {
+        "host": "192.168.1.10",
+        "port": 502,
+        "unit_id": 1
+    },
+    "poll_interval_ms": 1000,
+    "devices": [
+        {
+            "name": "Pump 1",
+            "type": "pump",
+            "control_register": 0,
+            "status_register": 100,
+            "setpoint_register": 200,
+            "setpoint_unit": "RPM",
+            "setpoint_min": 0,
+            "setpoint_max": 3000
+        },
+        {
+            "name": "Pump 2",
+            "type": "pump",
+            "control_register": 1,
+            "status_register": 101,
+            "setpoint_register": 201,
+            "setpoint_unit": "RPM",
+            "setpoint_min": 0,
+            "setpoint_max": 3000
+        },
+        {
+            "name": "Heater 1",
+            "type": "heater",
+            "control_register": 2,
+            "status_register": 102,
+            "setpoint_register": 202,
+            "setpoint_unit": "°C",
+            "setpoint_min": 0,
+            "setpoint_max": 200
+        }
+    ],
+    "sensors": [
+        {
+            "tag": "TC-001",
+            "name": "Reactor Temperature",
+            "category": "Temperature",
+            "register": 300,
+            "data_type": "uint16",
+            "scale": 0.1,
+            "offset": 0,
+            "unit": "°C",
+            "alarm_high": 150,
+            "alarm_low": 10
+        },
+        {
+            "tag": "TC-002",
+            "name": "Outlet Temperature",
+            "category": "Temperature",
+            "register": 301,
+            "data_type": "uint16",
+            "scale": 0.1,
+            "offset": 0,
+            "unit": "°C"
+        },
+        {
+            "tag": "PT-001",
+            "name": "System Pressure",
+            "category": "Pressure",
+            "register": 302,
+            "data_type": "uint16",
+            "scale": 0.01,
+            "offset": 0,
+            "unit": "bar",
+            "alarm_high": 10.0
+        },
+        {
+            "tag": "FT-001",
+            "name": "Flow Rate 1",
+            "category": "Flow",
+            "register": 303,
+            "data_type": "uint16",
+            "scale": 0.1,
+            "offset": 0,
+            "unit": "L/min"
+        },
+        {
+            "tag": "FT-002",
+            "name": "Flow Rate 2",
+            "category": "Flow",
+            "register": 304,
+            "data_type": "uint16",
+            "scale": 0.1,
+            "offset": 0,
+            "unit": "L/min"
+        }
+    ]
+}
