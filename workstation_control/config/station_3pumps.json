@@ -1,0 +1,147 @@
+{
+    "station_name": "Workstation B - 3 Pumps",
+    "plc": {
+        "host": "192.168.1.20",
+        "port": 502,
+        "unit_id": 1
+    },
+    "poll_interval_ms": 1000,
+    "devices": [
+        {
+            "name": "Pump 1",
+            "type": "pump",
+            "control_register": 0,
+            "status_register": 100,
+            "setpoint_register": 200,
+            "setpoint_unit": "RPM",
+            "setpoint_min": 0,
+            "setpoint_max": 3000
+        },
+        {
+            "name": "Pump 2",
+            "type": "pump",
+            "control_register": 1,
+            "status_register": 101,
+            "setpoint_register": 201,
+            "setpoint_unit": "RPM",
+            "setpoint_min": 0,
+            "setpoint_max": 3000
+        },
+        {
+            "name": "Pump 3",
+            "type": "pump",
+            "control_register": 2,
+            "status_register": 102,
+            "setpoint_register": 202,
+            "setpoint_unit": "RPM",
+            "setpoint_min": 0,
+            "setpoint_max": 3000
+        },
+        {
+            "name": "Motor 1",
+            "type": "motor",
+            "control_register": 3,
+            "status_register": 103,
+            "setpoint_register": 203,
+            "setpoint_unit": "Hz",
+            "setpoint_min": 0,
+            "setpoint_max": 60
+        },
+        {
+            "name": "Heater 1",
+            "type": "heater",
+            "control_register": 4,
+            "status_register": 104,
+            "setpoint_register": 204,
+            "setpoint_unit": "°C",
+            "setpoint_min": 0,
+            "setpoint_max": 300
+        }
+    ],
+    "sensors": [
+        {
+            "tag": "TC-001",
+            "name": "Reactor Temperature",
+            "category": "Temperature",
+            "register": 300,
+            "data_type": "uint16",
+            "scale": 0.1,
+            "offset": 0,
+            "unit": "°C",
+            "alarm_high": 200,
+            "alarm_low": 5
+        },
+        {
+            "tag": "TC-002",
+            "name": "Heater Temperature",
+            "category": "Temperature",
+            "register": 301,
+            "data_type": "uint16",
+            "scale": 0.1,
+            "offset": 0,
+            "unit": "°C",
+            "alarm_high": 280
+        },
+        {
+            "tag": "TC-003",
+            "name": "Outlet Temperature",
+            "category": "Temperature",
+            "register": 302,
+            "data_type": "uint16",
+            "scale": 0.1,
+            "offset": 0,
+            "unit": "°C"
+        },
+        {
+            "tag": "PT-001",
+            "name": "Inlet Pressure",
+            "category": "Pressure",
+            "register": 303,
+            "data_type": "uint16",
+            "scale": 0.01,
+            "offset": 0,
+            "unit": "bar",
+            "alarm_high": 12.0
+        },
+        {
+            "tag": "PT-002",
+            "name": "Outlet Pressure",
+            "category": "Pressure",
+            "register": 304,
+            "data_type": "uint16",
+            "scale": 0.01,
+            "offset": 0,
+            "unit": "bar"
+        },
+        {
+            "tag": "FT-001",
+            "name": "Flow Rate 1",
+            "category": "Flow",
+            "register": 305,
+            "data_type": "uint16",
+            "scale": 0.1,
+            "offset": 0,
+            "unit": "L/min"
+        },
+        {
+            "tag": "FT-002",
+            "name": "Flow Rate 2",
+            "category": "Flow",
+            "register": 306,
+            "data_type": "uint16",
+            "scale": 0.1,
+            "offset": 0,
+            "unit": "L/min"
+        },
+        {
+            "tag": "FT-003",
+            "name": "Flow Rate 3",
+            "category": "Flow",
+            "register": 307,
+            "data_type": "uint16",
+            "scale": 0.1,
+            "offset": 0,
+            "unit": "L/min"
+        }
+    ]
+}
